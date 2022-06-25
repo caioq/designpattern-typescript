@@ -4,7 +4,7 @@
 export class ErrorHandler {
   private messageBox: any;
 
-  constructor(messageBox) {
+  constructor(messageBox, httpClient) {
     this.messageBox = messageBox;
   }
 
@@ -27,5 +27,30 @@ export class ErrorHandler {
 
   private handleError(header, content) {
     this.messageBox.show(header, content);
+  }
+}
+
+export class ErrorLogger {
+  private _endpoint: string = "api/log";
+
+  constructor(private _httpClient) {}
+
+  logError(errorObject) {
+    return this._httpClient.post(this._endpoint, errorObject);
+  }
+}
+
+export class ErrorHanlerWithLogging extends ErrorHandler {
+  private _logger: any;
+
+  constructor(messageBox, httpClient, logger) {
+    super(messageBox, httpClient);
+    this._logger = logger;
+  }
+
+  wrapError(err: any, publicResponse: any, severity: any): void {
+    return this._logger.logError(err).then(() => {
+      super.wrapError(err, publicResponse, severity);
+    });
   }
 }
