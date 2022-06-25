@@ -1,3 +1,4 @@
+// open/close principle
 // Add a logger:
 // Inject an HttpClient
 // Log Error to our server
@@ -41,7 +42,7 @@ export class ErrorLogger {
 }
 
 export class ErrorHandlerWithLogging extends ErrorHandler {
-  private _logger: any;
+  private _logger: ErrorLogger;
 
   constructor(messageBox, httpClient, logger) {
     super(messageBox, httpClient);
@@ -54,3 +55,13 @@ export class ErrorHandlerWithLogging extends ErrorHandler {
     });
   }
 }
+
+// Liskov substituion principle
+// objects of a superclass should be replaceable with objects of its subclasses without breaking the application.
+let err, publicResponse, severity;
+
+const error = new ErrorHandler("message", {});
+error.wrapError(err, publicResponse, severity);
+
+const errorWithLog = new ErrorHandlerWithLogging("message", {}, {});
+errorWithLog.wrapError(err, publicResponse, severity);
