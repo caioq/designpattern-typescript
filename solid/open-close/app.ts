@@ -40,7 +40,7 @@ export class ErrorLogger {
   }
 }
 
-export class ErrorHanlerWithLogging extends ErrorHandler {
+export class ErrorHandlerWithLogging extends ErrorHandler {
   private _logger: any;
 
   constructor(messageBox, httpClient, logger) {
