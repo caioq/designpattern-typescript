@@ -1,6 +1,6 @@
 import { GameCharacter } from "./game-characters";
 
-export class GameCharacterFactory {
+export class GameCharactersFactory {
   public static getWarrior(level: number): GameCharacter {
     let warrior: GameCharacter;
     if (level < 10) {
