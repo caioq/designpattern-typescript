@@ -1,0 +1,1 @@
+- A combination of the single responsability and Open/Closed principles
