@@ -41,3 +41,11 @@ Basic operations of a containers
 
 - Register
 - Resolve
+
+## To test locally
+
+Run
+
+```
+npm run ts-node app
+```
