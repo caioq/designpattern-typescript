@@ -32,3 +32,11 @@ export class IoCContainer {
     return names.map((name) => this.resolve(name));
   }
 }
+
+// Using decorators
+export function Register(name: string, dependencies: string[]): Function {
+  let container = IoCContainer.instance;
+  return function <T extends { new (...args: any[]): {} }>(constructor: T) {
+    container.register(name, dependencies, constructor);
+  };
+}
