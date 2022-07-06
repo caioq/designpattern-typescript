@@ -1,0 +1,26 @@
+{
+  "name": "designpattern-typescript",
+  "version": "1.0.0",
+  "description": "This course starts by exploring SOLID principles to write clean code. Then you will create new objects and instance of classes with creational design Patterns. Next, you will utilize dependency injection with InversifyJS to create testable, maintainable, and extensible code.",
+  "main": "index.js",
+  "scripts": {
+    "ts-node": "ts-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioq/designpattern-typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caioq/designpattern-typescript/issues"
+  },
+  "homepage": "https://github.com/caioq/designpattern-typescript#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
+}
