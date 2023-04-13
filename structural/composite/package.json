@@ -1,0 +1,16 @@
+{
+  "name": "composite",
+  "version": "1.0.0",
+  "description": "- Used to create part-whole collections in the form of tree like structures that can contain both individual items and collections as well",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts-node": "ts-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.11"
+  }
+}
